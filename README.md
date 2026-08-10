@@ -163,7 +163,27 @@ pytest
 
 ---
 
+## 📊 Relatório Diário por E-mail & Diagnóstico de Erros
+
+O sistema conta com um **Relatório Diário de Preços e Saúde do Monitoramento**:
+
+1. **Agendamento Automático**: O GitHub Actions envia este relatório **1 vez ao dia** às **08:00 AM (BRT)**.
+2. **Conteúdo do Relatório**:
+   - **Tabela Consolidada**: Produto, Loja, Preço Atual, **Menor Preço das últimas 24 horas** (salvo no banco de dados SQLite `price_history.db`), Preço-alvo e Status.
+   - **⚠️ Seção de Diagnóstico de Erros**: Se alguma loja apresentar falha (como mudança no layout/seletor CSS, erro HTTP 404, 403 ou timeout), o relatório destaca exatamente qual loja falhou, exibindo o tipo de erro, a mensagem e o link para você atualizar os seletores em `src/config/products.py`!
+
+### Executando o Relatório Diário Manualmente
+
+Para disparar o relatório diário manualmente na sua máquina:
+
+```bash
+python -m src.main --daily-report
+```
+
+---
+
 ## 📧 Configuração de Notificações por E-mail (SMTP)
+
 
 O sistema agora possui suporte a notificações por e-mail via **SMTP**. 
 

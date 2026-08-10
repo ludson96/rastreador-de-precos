@@ -19,7 +19,7 @@ PRODUCTS: List[ProductConfig] = [
             "fastshop": StoreConfig(
                 name="Fast Shop",
                 url="https://site.fastshop.com.br/ar-condicionado-janela-7500-btus-consul-frio-com-design-moderno---ccb07gb-170153-180363/p",
-                selector=".OfferList_PriceFormat__IMczY, .false",
+                selector="[class*='OfferList_PriceFormat'], .price",
                 enabled=True,
                 product_identifier="CCB07GB",
                 scraper_type="generic"
