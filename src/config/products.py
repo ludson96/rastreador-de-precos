@@ -24,6 +24,14 @@ PRODUCTS: List[ProductConfig] = [
                 product_identifier="CCB07GB",
                 scraper_type="generic"
             ),
+            "telerio": StoreConfig(
+                name="Telerio",
+                url="https://www.telerio.com.br/ar-condicionado-janela-consul-7500-btus-frio-eletronico-design-moderno-ccn07fb/p?idsku=1145",
+                selector="[class*='spotPriceValue'], [class*='sellingPriceValue']",
+                enabled=True,
+                product_identifier="CCN07FB",
+                scraper_type="generic"
+            ),
         }
     )
 ]
