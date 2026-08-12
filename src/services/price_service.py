@@ -6,6 +6,7 @@ from typing import List, Dict, Type, Optional
 from src.models.product import ProductConfig, PriceResult
 from src.scrapers.base import BaseScraper
 from src.scrapers.generic_scraper import GenericScraper
+from src.scrapers.playwright_scraper import PlaywrightScraper
 from src.services.notification_service import NotificationService
 from src.database.history import PriceHistoryDB
 
@@ -25,7 +26,8 @@ class PriceService:
     ):
         self.products = products
         self.scrapers = scrapers or {
-            "generic": GenericScraper()
+            "generic": GenericScraper(),
+            "playwright": PlaywrightScraper(),
         }
         self.notification_service = notification_service or NotificationService()
         self.db_history = db_history or PriceHistoryDB()

@@ -32,6 +32,14 @@ PRODUCTS: List[ProductConfig] = [
                 product_identifier="CCN07FB",
                 scraper_type="generic"
             ),
+            "mercadolivre": StoreConfig(
+                name="Mercadolivre",
+                url="https://www.mercadolivre.com.br/ar-condicionado-janela-manual-consul-ccb07fb-7500-btus-frio-monofasico-110-v/p/MLB27175065",
+                selector=".ui-pdp-price__second-line .andes-money-amount",
+                enabled=True,
+                product_identifier="CCB07FB",
+                scraper_type="playwright"
+            ),
         }
     )
 ]
