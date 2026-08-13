@@ -21,8 +21,8 @@ def parse_brl_price(raw_price_str: str) -> Optional[float]:
     if not raw_price_str:
         return None
 
-    # Clean up currency symbols, spaces, and text wrappers
-    text = raw_price_str.replace("\xa0", " ").strip()
+    # Clean up currency symbols, spaces, line breaks, and text wrappers
+    text = raw_price_str.replace("\n", "").replace("\r", "").replace("\xa0", " ").strip()
 
     # Find the numeric price substring
     match = re.search(r'(\d+(?:[\.,]\d+)*)', text)

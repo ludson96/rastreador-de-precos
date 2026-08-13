@@ -23,6 +23,7 @@ def test_parse_brl_price_without_currency_symbol():
 def test_parse_brl_price_with_whitespace_and_newlines():
     assert parse_brl_price("\n  R$ 1.582,27 \t") == 1582.27
     assert parse_brl_price("Por apenas R$\u00a01.499,90 à vista") == 1499.90
+    assert parse_brl_price("R$\n1.609\n,\n91") == 1609.91
 
 
 def test_parse_brl_price_invalid_inputs():
