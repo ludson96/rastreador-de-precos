@@ -34,8 +34,8 @@ rastreador-de-precos/
 │   │   └── products.py           # Catálogo centralizado de produtos e lojas
 │   ├── scrapers/
 │   │   ├── __init__.py
-│   │   ├── base.py               # Abstração BaseScraper para scrapers futuros
-│   │   └── generic_scraper.py    # Scraper genérico (requests + BeautifulSoup + CSS selector)
+│   │   ├── base.py                   # Abstração BaseScraper para scrapers futuros
+│   │   └── generic_scraper.py        # Scraper genérico (requests + BeautifulSoup + CSS selector)
 │   ├── models/
 │   │   ├── __init__.py
 │   │   └── product.py            # Dataclasses de Produto, Loja e Resultado
@@ -233,8 +233,8 @@ on:
 
 ## 🔮 Arquitetura e Extensões Futuras
 
-1. **Novos Scrapers (ex: Playwright / Browser Subagent)**:
-   Implemente uma subclasse de `BaseScraper` em `src/scrapers/playwright_scraper.py` e registre-a no `PriceService`.
+1. **Novos Scrapers (ex: APIs Oficiais ou Scraping via Proxies)**:
+   Implemente uma subclasse de `BaseScraper` em `src/scrapers/` e registre-a no `PriceService`.
 2. **Novos Alertas (Telegram / Discord / E-mail)**:
    Crie uma classe que herde de `BaseNotifier` em `src/services/notification_service.py` e adicione ao `NotificationService`.
 3. **Histórico em SQLite**:
