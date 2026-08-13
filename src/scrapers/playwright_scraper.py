@@ -14,7 +14,7 @@ class PlaywrightScraper(BaseScraper):
     Scraper utilizing Playwright sync API with Firefox browser engine for dynamic client-rendered web pages.
     """
 
-    def __init__(self, timeout: int = 15000, headless: bool = True):
+    def __init__(self, timeout: int = 30000, headless: bool = True):
         self.timeout = timeout
         self.headless = headless
 
@@ -42,7 +42,7 @@ class PlaywrightScraper(BaseScraper):
                 page = context.new_page()
 
                 try:
-                    page.goto(store.url, wait_until="load", timeout=self.timeout)
+                    page.goto(store.url, wait_until="domcontentloaded", timeout=self.timeout)
                     
                     # Aguarda o elemento de preço aparecer na página
                     element = page.wait_for_selector(store.selector, timeout=self.timeout)
